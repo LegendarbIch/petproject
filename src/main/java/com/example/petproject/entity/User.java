@@ -1,6 +1,7 @@
-package com.example.demo.entity;
+package com.example.petproject.entity;
 
-import com.example.demo.entity.enums.ERole;
+import com.example.petproject.entity.enums.ERole;
+import com.example.petproject.repository.PostRepository;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -46,6 +47,7 @@ public class User implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
 
     public User() {
+
     }
 
     public User(Long id,

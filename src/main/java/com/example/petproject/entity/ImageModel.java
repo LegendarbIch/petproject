@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.petproject.entity;
 
 import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;
