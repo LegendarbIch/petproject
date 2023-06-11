@@ -24,15 +24,17 @@ import java.util.Collections;
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
     public static final Logger LOG = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
 
-    private final JWTTokenProvider jwtTokenProvider;
+    private JWTTokenProvider jwtTokenProvider;
 
-    private final CustomUserDetailsService customUserDetailsService;
+    private CustomUserDetailsService customUserDetailsService;
 
     @Autowired
-    private JWTAuthenticationFilter(JWTTokenProvider jwtTokenProvider,
-                                    CustomUserDetailsService customUserDetailsService) {
+    JWTAuthenticationFilter(JWTTokenProvider jwtTokenProvider,
+                            CustomUserDetailsService customUserDetailsService) {
         this.jwtTokenProvider = jwtTokenProvider;
         this.customUserDetailsService = customUserDetailsService;
+    }
+    JWTAuthenticationFilter() {
     }
 
     @Override
